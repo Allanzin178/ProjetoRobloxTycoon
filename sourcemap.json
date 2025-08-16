@@ -1,0 +1,717 @@
+{
+  "name": "project",
+  "className": "DataModel",
+  "filePaths": ["default.project.json"],
+  "children": [
+    {
+      "name": "ReplicatedStorage",
+      "className": "ReplicatedStorage",
+      "children": [
+        {
+          "name": "Misc",
+          "className": "Folder",
+          "filePaths": ["src/ReplicatedStorage\\Misc\\init.meta.json"],
+          "children": [
+            {
+              "name": "Tools",
+              "className": "Folder",
+              "filePaths": [
+                "src/ReplicatedStorage\\Misc\\Tools\\init.meta.json"
+              ],
+              "children": [
+                {
+                  "name": "ToolsAnims",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ReplicatedStorage\\Misc\\Tools\\ToolsAnims.lua"
+                  ]
+                },
+                {
+                  "name": "ToolsRemote",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ReplicatedStorage\\Misc\\Tools\\ToolsRemote.lua"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Modules",
+          "className": "Folder",
+          "filePaths": ["src/ReplicatedStorage\\Modules\\init.meta.json"],
+          "children": [
+            {
+              "name": "ActionHandler",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Modules\\ActionHandler.lua"]
+            },
+            {
+              "name": "AnimationHandler",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ReplicatedStorage\\Modules\\AnimationHandler.lua"
+              ]
+            },
+            {
+              "name": "HitboxHandler",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Modules\\HitboxHandler.lua"]
+            },
+            {
+              "name": "SoundHandler",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Modules\\SoundHandler.lua"]
+            },
+            {
+              "name": "ToolHandler",
+              "className": "ModuleScript",
+              "filePaths": ["src/ReplicatedStorage\\Modules\\ToolHandler.lua"]
+            }
+          ]
+        },
+        {
+          "name": "Utils",
+          "className": "Folder",
+          "filePaths": ["src/ReplicatedStorage\\Utils\\init.meta.json"],
+          "children": [
+            {
+              "name": "GuiAnimations",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ReplicatedStorage\\Utils\\GuiAnimations\\init.lua"
+              ],
+              "children": [
+                {
+                  "name": "ButtonAnimation",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ReplicatedStorage\\Utils\\GuiAnimations\\ButtonAnimation.lua"
+                  ]
+                },
+                {
+                  "name": "ExpandAnimation",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ReplicatedStorage\\Utils\\GuiAnimations\\ExpandAnimation.lua"
+                  ]
+                },
+                {
+                  "name": "ValueAnimation",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ReplicatedStorage\\Utils\\GuiAnimations\\ValueAnimation.lua"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ServerScriptService",
+      "className": "ServerScriptService",
+      "children": [
+        {
+          "name": "Components",
+          "className": "Folder",
+          "filePaths": ["src/ServerScriptService\\Components\\init.meta.json"],
+          "children": [
+            {
+              "name": "Adder",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerScriptService\\Components\\Adder.lua"]
+            },
+            {
+              "name": "Bank",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerScriptService\\Components\\Bank.lua"]
+            },
+            {
+              "name": "Button",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerScriptService\\Components\\Button.lua"]
+            },
+            {
+              "name": "ClickerDropper",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerScriptService\\Components\\ClickerDropper.lua"
+              ]
+            },
+            {
+              "name": "Collector",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerScriptService\\Components\\Collector.lua"
+              ]
+            },
+            {
+              "name": "Conveyor",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerScriptService\\Components\\Conveyor.lua"]
+            },
+            {
+              "name": "Dropper",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerScriptService\\Components\\Dropper.lua"]
+            },
+            {
+              "name": "Lockable",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerScriptService\\Components\\Lockable.lua"]
+            },
+            {
+              "name": "OwnerDoor",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerScriptService\\Components\\OwnerDoor.lua"
+              ]
+            },
+            {
+              "name": "Spinner",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerScriptService\\Components\\Spinner\\init.lua"
+              ],
+              "children": [
+                {
+                  "name": "Rewards",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerScriptService\\Components\\Spinner\\Rewards.lua"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Unlockable",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerScriptService\\Components\\Unlockable.lua"
+              ]
+            },
+            {
+              "name": "Upgrader",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerScriptService\\Components\\Upgrader.lua"]
+            }
+          ]
+        },
+        {
+          "name": "Configs",
+          "className": "Folder",
+          "filePaths": ["src/ServerScriptService\\Configs\\init.meta.json"],
+          "children": [
+            {
+              "name": "CurrenciesEnum",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerScriptService\\Configs\\CurrenciesEnum.lua"
+              ]
+            },
+            {
+              "name": "Tycoon",
+              "className": "Folder",
+              "filePaths": [
+                "src/ServerScriptService\\Configs\\Tycoon\\init.meta.json"
+              ],
+              "children": [
+                {
+                  "name": "Constructions",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerScriptService\\Configs\\Tycoon\\Constructions.lua"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "UpgradeService",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerScriptService\\Configs\\UpgradeService\\init.lua"
+              ],
+              "children": [
+                {
+                  "name": "UpgradesData",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerScriptService\\Configs\\UpgradeService\\UpgradesData.lua"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Weapons",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerScriptService\\Configs\\Weapons\\init.lua"
+              ],
+              "children": [
+                {
+                  "name": "TungBat",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerScriptService\\Configs\\Weapons\\TungBat.lua"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Modules",
+          "className": "Folder",
+          "filePaths": ["src/ServerScriptService\\Modules\\init.meta.json"],
+          "children": [
+            {
+              "name": "CombatHandler",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerScriptService\\Modules\\CombatHandler.lua"
+              ]
+            },
+            {
+              "name": "PlayerCollisionGroupHandler",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerScriptService\\Modules\\PlayerCollisionGroupHandler.lua"
+              ]
+            },
+            {
+              "name": "SpawnHandler",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerScriptService\\Modules\\SpawnHandler\\init.lua"
+              ],
+              "children": [
+                {
+                  "name": "Spawn",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerScriptService\\Modules\\SpawnHandler\\Spawn.lua"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "UpgradeHandler",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerScriptService\\Modules\\UpgradeHandler.lua"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PlayerManager",
+          "className": "ModuleScript",
+          "filePaths": ["src/ServerScriptService\\PlayerManager.lua"]
+        },
+        {
+          "name": "Server",
+          "className": "Script",
+          "filePaths": ["src/ServerScriptService\\Server.server.lua"]
+        },
+        {
+          "name": "Tycoon",
+          "className": "ModuleScript",
+          "filePaths": ["src/ServerScriptService\\Tycoon.lua"]
+        },
+        {
+          "name": "Utils",
+          "className": "Folder",
+          "filePaths": ["src/ServerScriptService\\Utils\\init.meta.json"],
+          "children": [
+            {
+              "name": "KnockbackUtil",
+              "className": "ModuleScript",
+              "filePaths": ["src/ServerScriptService\\Utils\\KnockbackUtil.lua"]
+            },
+            {
+              "name": "RagdollUtil",
+              "className": "ModuleScript",
+              "filePaths": [
+                "src/ServerScriptService\\Utils\\RagdollUtil\\init.lua"
+              ],
+              "children": [
+                {
+                  "name": "RagdollData",
+                  "className": "ModuleScript",
+                  "filePaths": [
+                    "src/ServerScriptService\\Utils\\RagdollUtil\\RagdollData.lua"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ServerStorage",
+      "className": "ServerStorage",
+      "children": [
+        {
+          "name": "Tool",
+          "className": "Tool",
+          "filePaths": ["src/ServerStorage\\Tool\\init.meta.json"],
+          "children": [
+            {
+              "name": "LocalScript",
+              "className": "LocalScript",
+              "filePaths": ["src/ServerStorage\\Tool\\LocalScript.client.lua"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StarterGui",
+      "className": "StarterGui",
+      "children": [
+        {
+          "name": "Currencies",
+          "className": "ScreenGui",
+          "filePaths": ["src/StarterGui\\Currencies\\init.meta.json"],
+          "children": [
+            {
+              "name": "ButtonAnimationHandler",
+              "className": "LocalScript",
+              "filePaths": [
+                "src/StarterGui\\Currencies\\ButtonAnimationHandler.client.lua"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Mute",
+          "className": "ScreenGui",
+          "filePaths": ["src/StarterGui\\Mute\\init.meta.json"],
+          "children": [
+            {
+              "name": "ButtonAnimationHandler",
+              "className": "LocalScript",
+              "filePaths": [
+                "src/StarterGui\\Mute\\ButtonAnimationHandler.client.lua"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StarterPack",
+      "className": "StarterPack",
+      "children": [
+        {
+          "name": "TungBat",
+          "className": "Tool",
+          "filePaths": ["src/StarterPack\\TungBat\\init.meta.json"],
+          "children": [
+            {
+              "name": "Handler",
+              "className": "LocalScript",
+              "filePaths": ["src/StarterPack\\TungBat\\Handler.client.lua"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StarterPlayer",
+      "className": "StarterPlayer",
+      "children": [
+        {
+          "name": "StarterCharacterScripts",
+          "className": "StarterCharacterScripts",
+          "children": [
+            {
+              "name": "Animate",
+              "className": "LocalScript",
+              "filePaths": [
+                "src/StarterPlayer/StarterCharacterScripts\\Animate.client.lua",
+                "src/StarterPlayer/StarterCharacterScripts\\Animate.meta.json"
+              ]
+            },
+            {
+              "name": "Script",
+              "className": "Script",
+              "filePaths": [
+                "src/StarterPlayer/StarterCharacterScripts\\Script.server.lua"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "StarterPlayerScripts",
+          "className": "StarterPlayerScripts",
+          "children": [
+            {
+              "name": "Hud",
+              "className": "Folder",
+              "filePaths": [
+                "src/StarterPlayer/StarterPlayerScripts\\Hud\\init.meta.json"
+              ],
+              "children": [
+                {
+                  "name": "CurrencyHandler",
+                  "className": "LocalScript",
+                  "filePaths": [
+                    "src/StarterPlayer/StarterPlayerScripts\\Hud\\CurrencyHandler.client.lua"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "MusicHandler",
+              "className": "LocalScript",
+              "filePaths": [
+                "src/StarterPlayer/StarterPlayerScripts\\MusicHandler.client.lua"
+              ]
+            },
+            {
+              "name": "RagdollClient",
+              "className": "LocalScript",
+              "filePaths": [
+                "src/StarterPlayer/StarterPlayerScripts\\RagdollClient.client.lua"
+              ]
+            },
+            {
+              "name": "Run",
+              "className": "LocalScript",
+              "filePaths": [
+                "src/StarterPlayer/StarterPlayerScripts\\Run.client.lua"
+              ]
+            },
+            {
+              "name": "Sound",
+              "className": "LocalScript",
+              "filePaths": [
+                "src/StarterPlayer/StarterPlayerScripts\\Sound.client.lua"
+              ]
+            },
+            {
+              "name": "Tycoon",
+              "className": "Folder",
+              "filePaths": [
+                "src/StarterPlayer/StarterPlayerScripts\\Tycoon\\init.meta.json"
+              ],
+              "children": [
+                {
+                  "name": "SpinnerAnimationHandler",
+                  "className": "LocalScript",
+                  "filePaths": [
+                    "src/StarterPlayer/StarterPlayerScripts\\Tycoon\\SpinnerAnimationHandler.client.lua",
+                    "src/StarterPlayer/StarterPlayerScripts\\Tycoon\\SpinnerAnimationHandler.meta.json"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Workspace",
+      "className": "Workspace",
+      "children": [
+        {
+          "name": "Daily Spin Gui by HowToRoblox",
+          "className": "Model",
+          "filePaths": [
+            "src/Workspace\\Daily Spin Gui by HowToRoblox\\init.meta.json"
+          ],
+          "children": [
+            {
+              "name": "ServerScriptService",
+              "className": "Model",
+              "filePaths": [
+                "src/Workspace\\Daily Spin Gui by HowToRoblox\\ServerScriptService\\init.meta.json"
+              ],
+              "children": [
+                {
+                  "name": "DailySpinHandler",
+                  "className": "Script",
+                  "filePaths": [
+                    "src/Workspace\\Daily Spin Gui by HowToRoblox\\ServerScriptService\\DailySpinHandler.server.lua"
+                  ]
+                },
+                {
+                  "name": "DailySpinTimerHandler",
+                  "className": "Script",
+                  "filePaths": [
+                    "src/Workspace\\Daily Spin Gui by HowToRoblox\\ServerScriptService\\DailySpinTimerHandler.server.lua"
+                  ]
+                },
+                {
+                  "name": "DataHandler",
+                  "className": "Script",
+                  "filePaths": [
+                    "src/Workspace\\Daily Spin Gui by HowToRoblox\\ServerScriptService\\DataHandler.server.lua"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "ServerStorage",
+              "className": "Model",
+              "filePaths": [
+                "src/Workspace\\Daily Spin Gui by HowToRoblox\\ServerStorage\\init.meta.json"
+              ],
+              "children": [
+                {
+                  "name": "ServerModules",
+                  "className": "Folder",
+                  "filePaths": [
+                    "src/Workspace\\Daily Spin Gui by HowToRoblox\\ServerStorage\\ServerModules\\init.meta.json"
+                  ],
+                  "children": [
+                    {
+                      "name": "DS2",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/Workspace\\Daily Spin Gui by HowToRoblox\\ServerStorage\\ServerModules\\DS2\\init.lua"
+                      ],
+                      "children": [
+                        {
+                          "name": "SavingMethods",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "src/Workspace\\Daily Spin Gui by HowToRoblox\\ServerStorage\\ServerModules\\DS2\\SavingMethods\\init.lua"
+                          ],
+                          "children": [
+                            {
+                              "name": "OrderedBackups",
+                              "className": "ModuleScript",
+                              "filePaths": [
+                                "src/Workspace\\Daily Spin Gui by HowToRoblox\\ServerStorage\\ServerModules\\DS2\\SavingMethods\\OrderedBackups.lua"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "TableUtil",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "src/Workspace\\Daily Spin Gui by HowToRoblox\\ServerStorage\\ServerModules\\DS2\\TableUtil.lua"
+                          ]
+                        },
+                        {
+                          "name": "Verifier",
+                          "className": "ModuleScript",
+                          "filePaths": [
+                            "src/Workspace\\Daily Spin Gui by HowToRoblox\\ServerStorage\\ServerModules\\DS2\\Verifier.lua"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Prizes",
+                      "className": "ModuleScript",
+                      "filePaths": [
+                        "src/Workspace\\Daily Spin Gui by HowToRoblox\\ServerStorage\\ServerModules\\Prizes.lua"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "StarterGui",
+              "className": "Model",
+              "filePaths": [
+                "src/Workspace\\Daily Spin Gui by HowToRoblox\\StarterGui\\init.meta.json"
+              ],
+              "children": [
+                {
+                  "name": "DailySpinGui",
+                  "className": "ScreenGui",
+                  "filePaths": [
+                    "src/Workspace\\Daily Spin Gui by HowToRoblox\\StarterGui\\DailySpinGui\\init.meta.json"
+                  ],
+                  "children": [
+                    {
+                      "name": "DailySpinGuiHandler",
+                      "className": "LocalScript",
+                      "filePaths": [
+                        "src/Workspace\\Daily Spin Gui by HowToRoblox\\StarterGui\\DailySpinGui\\DailySpinGuiHandler.client.lua"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Leaderboard",
+          "className": "Model",
+          "filePaths": ["src/Workspace\\Leaderboard\\init.meta.json"],
+          "children": [
+            {
+              "name": "LeaderboardPart",
+              "className": "Part",
+              "filePaths": [
+                "src/Workspace\\Leaderboard\\LeaderboardPart\\init.meta.json"
+              ],
+              "children": [
+                {
+                  "name": "SurfaceGui",
+                  "className": "SurfaceGui",
+                  "filePaths": [
+                    "src/Workspace\\Leaderboard\\LeaderboardPart\\SurfaceGui\\init.meta.json"
+                  ],
+                  "children": [
+                    {
+                      "name": "ScrollingFrame",
+                      "className": "ScrollingFrame",
+                      "filePaths": [
+                        "src/Workspace\\Leaderboard\\LeaderboardPart\\SurfaceGui\\ScrollingFrame\\init.meta.json"
+                      ],
+                      "children": [
+                        {
+                          "name": "LeaderboardScript",
+                          "className": "Script",
+                          "filePaths": [
+                            "src/Workspace\\Leaderboard\\LeaderboardPart\\SurfaceGui\\ScrollingFrame\\LeaderboardScript.server.lua"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "UpdateLeaderboard",
+              "className": "Script",
+              "filePaths": [
+                "src/Workspace\\Leaderboard\\UpdateLeaderboard.server.lua",
+                "src/Workspace\\Leaderboard\\UpdateLeaderboard.meta.json"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Rig",
+          "className": "Model",
+          "filePaths": ["src/Workspace\\Rig\\init.meta.json"],
+          "children": [
+            {
+              "name": "Animate",
+              "className": "LocalScript",
+              "filePaths": [
+                "src/Workspace\\Rig\\Animate.client.lua",
+                "src/Workspace\\Rig\\Animate.meta.json"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
