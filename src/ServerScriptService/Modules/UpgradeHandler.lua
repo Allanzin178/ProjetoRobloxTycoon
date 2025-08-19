@@ -23,8 +23,6 @@ local UpgradeHandler = {}
 
 function UpgradeHandler:Init()
 	UpgradeHandler.ListenInvoke()
-	
-	
 end
 
 function UpgradeHandler.ListenInvoke()
@@ -34,10 +32,12 @@ function UpgradeHandler.ListenInvoke()
 end
 
 function UpgradeHandler.UnlockUpgrade(player:Player, upgradeId: string): boolean
-	
+	-- TODO: Verificação se o player ja tem o upgrade, e se ele tem o dinheiro necessario
+	print("Recebido!", upgradeId)
 end
 
 function UpgradeHandler.GetAllUpgrades(): boolean
+	-- TODO: Melhorar para informar os upgrades desbloqueados
 	return UpgradeService.GetAll()
 end
 
