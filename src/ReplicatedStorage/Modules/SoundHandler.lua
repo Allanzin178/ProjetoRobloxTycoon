@@ -9,7 +9,9 @@ local Sounds = {}
 
 local MAX_RETRY_SOUND = 3
 
-type SoundConfigs = {
+export type PitchVariations = "Low" | "Medium" | "High"
+
+export type SoundConfigs = {
 	Volume: number?,
 	MaxDistance: number?,
 	MinDistance: number?,
@@ -19,6 +21,10 @@ type SoundConfigs = {
 	PlaybackSpeed: number?,
 	TimePosition: number?,
 	Parent: Instance?,
+	RandomPitch: {
+		enabled: boolean?,
+		variation: PitchVariations?
+	}?
 }
 
 function SoundHandler:Init()
@@ -42,7 +48,6 @@ function SoundHandler.Play(name: string, configs: SoundConfigs, location: Instan
 	local newSound = SoundHandler.CloneSound(ogSound, configs)
 	
 	newSound:Play()
-	
 end
 
 function SoundHandler.GatherSounds(location: Instance, sounds: {})
@@ -78,7 +83,7 @@ function SoundHandler.FindSound(name: string, sounds: {}): Sound?
 				end
 			end		
 		end
-		print("Tentativa ", retrys)
+		warn("Tentativa ", retrys)
 		retrys += 1
 		
 		SoundHandler.GatherSounds(SoundService, Sounds)
@@ -86,6 +91,30 @@ function SoundHandler.FindSound(name: string, sounds: {}): Sound?
 	
 	
 	
+end
+
+function SoundHandler.RandomPitch(sound: Sound, variation: PitchVariations)
+	local variationsConfig: {[PitchVariations]: NumberRange} = {
+		["Low"] = NumberRange.new(1, 5),
+		["Medium"] = NumberRange.new(5, 10),
+		["High"] = NumberRange.new(10, 20)
+	}
+
+	local variationSelected: NumberRange = variationsConfig[variation] or variationsConfig["Low"]
+
+	local ADD = 1
+	local SUBTRACT = 2
+
+	local addOrSubtract = math.random(ADD, SUBTRACT)
+	local pitchQuantity = math.random(variationSelected.Min, variationSelected.Max) / 100
+
+	if addOrSubtract == 1 then
+		sound.PlaybackSpeed = 1 + pitchQuantity -- Se pitchQuantity fosse 20 por exemplo: 1 + 0,2 = 1,2
+	elseif addOrSubtract == 2 then
+		sound.PlaybackSpeed = 1 - pitchQuantity -- Se pitchQuantity fosse 20 por exemplo: 1 - 0,2 = 0,8
+	end
+
+	return sound
 end
 
 function SoundHandler.CloneSound(ogSound: Sound, configs: SoundConfigs?)
@@ -102,6 +131,11 @@ function SoundHandler.CloneSound(ogSound: Sound, configs: SoundConfigs?)
 	newSound.Looped = configs.Looped or ogSound.Looped
 	newSound.PlaybackSpeed = configs.PlaybackSpeed or ogSound.PlaybackSpeed
 	newSound.TimePosition = configs.TimePosition or ogSound.TimePosition
+
+	if configs.RandomPitch and configs.RandomPitch.enabled then
+		-- Randomiza o playbackspeed baseado na config passada e ja muda no newSound
+		SoundHandler.RandomPitch(newSound, configs.RandomPitch.variation or nil)
+	end
 
 	newSound.Parent = configs.Parent or ogSound.Parent
 

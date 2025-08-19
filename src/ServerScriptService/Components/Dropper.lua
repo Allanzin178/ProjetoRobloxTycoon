@@ -66,7 +66,7 @@ function Dropper:Drop()
 	drop:SetNetworkOwner(self.Tycoon.Owner)
 	
 	if self.IsAbleToPlaySfx then
-		SoundHandler.Play("Pop", { Parent = self.Instance:WaitForChild("Spout") })
+		SoundHandler.Play("Pop", { Parent = self.Instance:WaitForChild("Spout")})
 	end
 	
 	

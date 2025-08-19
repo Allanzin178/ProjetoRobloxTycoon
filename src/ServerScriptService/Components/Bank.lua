@@ -46,7 +46,7 @@ end
 
 function Bank:Cashout(player)
 	if self.Balance > 0 and player == self.Tycoon.Owner then
-		SoundHandler.SendSoundToClient(self.Tycoon.Owner, "Money")
+		SoundHandler.SendSoundToClient(self.Tycoon.Owner, "Money", {RandomPitch = {enabled = true}})
 		self:CashTransfer(player)
 	end
 end

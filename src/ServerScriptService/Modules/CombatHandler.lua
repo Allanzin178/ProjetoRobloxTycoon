@@ -15,6 +15,7 @@ Events["Client-Server"].Combat.OnServerEvent:Connect(function(plr, toolName, act
 	if not toolName then return end
 	if not actionName then return end
 
+	
 	local chr = plr.Character or plr.CharacterAdded:Wait()
 	if not chr then return end
 
@@ -33,7 +34,7 @@ Events["Client-Server"].Combat.OnServerEvent:Connect(function(plr, toolName, act
 	local hitboxCallback = function(enemy: Model)
 		RagdollUtil.RagdollCharacter(enemy, weaponInfo.RagdollDuration)
 		KnockbackUtil(chr, enemy, weaponInfo.KnockbackDistance)
-		SoundHandler.Play("BatHit3")
+		SoundHandler.Play("BatHit3", {RandomPitch = {enabled = true, variation = "Medium"}})
 		-- Damage logic or more here
 	end
 

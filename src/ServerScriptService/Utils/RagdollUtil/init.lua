@@ -92,12 +92,13 @@ function RagdollUtil.RagdollCharacter(char: Model, duration: number?)
 	end
 
 	if _RagdollTimers[char] then
-		coroutine.close(_RagdollTimers[char])
+		return
 	end
 	
 	_RagdollTimers[char] = coroutine.create(function()
 		task.wait(duration)
 		RagdollUtil.UnragdollCharacter(char)
+		_RagdollTimers[char] = nil
 	end)
 	coroutine.resume(_RagdollTimers[char])
 

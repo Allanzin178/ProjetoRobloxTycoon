@@ -10,7 +10,6 @@ local ActionHandler = {}
 local isAttacking = false
 
 function ActionHandler.M1(toolName: string, chr: Model, inputName: string, inputState: Enum.UserInputState)
-	print(inputName, inputState)
 	if isAttacking == false then
 		if inputState ~= Enum.UserInputState.Begin then return end
 		
@@ -33,7 +32,7 @@ function ActionHandler.M1(toolName: string, chr: Model, inputName: string, input
 		end
 		
 		local function whenPlayedFunc()
-			SoundHandler.Play("BatSwing1")
+			SoundHandler.Play("BatSwing1", {RandomPitch = {enabled = true}})
 		end
 
 		local track = AnimationHandler.LoadAnim(chr, "BatAttack", animationId, markerReached, whenEndedFunc, whenPlayedFunc)

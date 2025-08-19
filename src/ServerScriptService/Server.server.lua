@@ -2,6 +2,7 @@ local PlayerManager = require(script.Parent.PlayerManager)
 local SpawnHandler = require(script.Parent.Modules.SpawnHandler)
 local UpgradeHandler = require(script.Parent.Modules.UpgradeHandler)
 local PlayerCGHandler = require(script.Parent.Modules.PlayerCollisionGroupHandler)
+local CombatHandler = require(script.Parent.Modules.CombatHandler)
 
 local RS = game:GetService("ReplicatedStorage")
 local RagdollEvent = RS.Events["Client-Server"].Ragdoll
