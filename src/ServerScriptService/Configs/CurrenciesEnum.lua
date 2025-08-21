@@ -1,8 +1,10 @@
-export type Type = "coins" | "cosmiccoins"
+local PlayerManager = require(game:GetService("ServerScriptService").PlayerManager)
+
+export type Type = "Coins" | "CosmicCoins"
 
 local Currencies = {
-	Coins = "coins",
-	CosmicCoins = "cosmiccoins"	
+	Coins = "Coins",
+	CosmicCoins = "CosmicCoins"	
 }
 
 return Currencies

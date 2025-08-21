@@ -32,7 +32,7 @@ function UpgradeHandler.ListenInvoke()
 end
 
 function UpgradeHandler.UnlockUpgrade(player: Player, upgradeId: string): boolean & string
-	-- TODO: Verificação se o player ja tem o upgrade, e se ele tem o dinheiro necessario
+	-- Resposta generica para caso o return nao especifique uma
 	local resposta = "Operação deu errado"
 
 	-- Verificação se existe o upgrade com o id passado:
@@ -49,12 +49,31 @@ function UpgradeHandler.UnlockUpgrade(player: Player, upgradeId: string): boolea
 		return false, resposta
 	end
 
-	-- Verifica se o usuario tem dinheiro para o upgrade
-	local currencyType = upgrade.Value.Currency
+	-- TODO: terminar logica de verificar se o player tem o unlockId requirido
+	local unlocks = PlayerManager.GetUnlockIds(player)
 	
+	-- Pega o tipo de moeda necessário para comprar o upgrade
+	local currencyType = upgrade.Value.Currency
 
+	-- Puxa as funções get e set dessa moeda
+	if not PlayerManager.CurrencyFunctions[currencyType] then
+		resposta = "Não existem funções para a moeda " .. currencyType
+		return false, resposta
+	end
+	local currencyFunctions = PlayerManager.CurrencyFunctions[currencyType]
+
+	-- Informações (quantidade de moedas que o player tem e quantidade de moedas que o upgrade pede)
+	local playerCurrency = currencyFunctions.GetCurrency(player)
+	local upgradeValue = upgrade.Value.Quantity
+
+	-- Verifica se o usuario tem dinheiro para o upgrade
+	if playerCurrency < upgradeValue then
+		resposta = string.format("Não tens a quantidade de %s necessária para comprar o upgrade! (%d)", currencyType, upgradeValue)
+		return false, resposta
+	end
+
+	currencyFunctions.SetCurrency(player, playerCurrency - upgradeValue)
 	PlayerManager.AddUpgradeId(player, upgradeId)
-	print("Upgrades:", upgrades)
 	return true
 end
 

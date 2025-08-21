@@ -99,6 +99,11 @@ function PlayerManager.Start()
 		local player = Players:GetPlayerByUserId(textsource.UserId)
 		PlayerManager.ClearData(player)
 	end)
+
+	TextChatService.ResetUpgrades.Triggered:Connect(function(textsource: TextSource)
+		local player = Players:GetPlayerByUserId(textsource.UserId)
+		PlayerManager.ResetUpgrades(player)
+	end)
 	
 	PlayerManager.BindToClose(PlayerManager.OnClose)
 end
@@ -112,7 +117,6 @@ function PlayerManager.OnPlayerAdded(player)
 	
 	sessionData[player.UserId] = dataTable
 	
-	print(sessionData[player.UserId])
 	Events["Server-Client"].CashChange:FireClient(player, sessionData[player.UserId].Cash)
 	Events["Server-Client"].CosmicCoinsChange:FireClient(player, sessionData[player.UserId].CosmicCoins)
 	
@@ -167,6 +171,18 @@ function PlayerManager.SetCosmicCoins(player: Player, value: number)
 	end
 end
 
+-- / Currency functions
+PlayerManager.CurrencyFunctions = {
+	Coins = {
+		GetCurrency = PlayerManager.GetCash,
+		SetCurrency = PlayerManager.SetCash
+	},
+	CosmicCoins = {
+		GetCurrency = PlayerManager.GetCosmicCoins,
+		SetCurrency = PlayerManager.SetCosmicCoins
+	}
+}
+
 -- / Get e set time played
 function PlayerManager.GetTimePlayed(player: Player): number
 	return sessionData[player.UserId].TimePlayed
@@ -199,6 +215,8 @@ function PlayerManager.AddUnlockId(player: Player, id: string)
 	end
 end
 
+
+
 -- / Get e set bankcash
 function PlayerManager.GetBankCash(player: Player)
 	return sessionData[player.UserId].TycoonConfig.BankCash
@@ -218,12 +236,16 @@ end
 function PlayerManager.AddUpgradeId(player: Player, id: string)
 	local data = sessionData[player.UserId]
 
-	print("A")
 	if not table.find(data.UpgradeIds, id) then
-		print("B")
 		table.insert(data.UpgradeIds, id)
 	end
 end
+
+function PlayerManager.ResetUpgrades(player: Player)
+	local data = sessionData[player.UserId]
+	table.clear(data.UpgradeIds)
+end
+-- / Fim getters e setters
 
 function PlayerManager.ClearData(player: Player)
 	table.clear(sessionData[player.UserId].UnlockIds)
