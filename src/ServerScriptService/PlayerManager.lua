@@ -133,6 +133,7 @@ function PlayerManager.BindToClose(callback)
 	game:BindToClose(callback)
 end
 
+-- / Get e set cash
 function PlayerManager.GetCash(player: Player)
 	return sessionData[player.UserId].Cash
 end
@@ -153,6 +154,7 @@ function PlayerManager.SetCash(player: Player, value: number)
 	end
 end
 
+-- / Get e set cosmic coins
 function PlayerManager.GetCosmicCoins(player: Player)
 	return sessionData[player.UserId].CosmicCoins
 end
@@ -165,6 +167,7 @@ function PlayerManager.SetCosmicCoins(player: Player, value: number)
 	end
 end
 
+-- / Get e set time played
 function PlayerManager.GetTimePlayed(player: Player): number
 	return sessionData[player.UserId].TimePlayed
 end
@@ -183,6 +186,7 @@ function PlayerManager.SetTimePlayed(player: Player, value: number)
 	end
 end
 
+-- / Get e set unlock ids
 function PlayerManager.GetUnlockIds(player: Player)
 	return sessionData[player.UserId].UnlockIds
 end
@@ -195,6 +199,7 @@ function PlayerManager.AddUnlockId(player: Player, id: string)
 	end
 end
 
+-- / Get e set bankcash
 function PlayerManager.GetBankCash(player: Player)
 	return sessionData[player.UserId].TycoonConfig.BankCash
 end
@@ -202,6 +207,21 @@ end
 function PlayerManager.SetBankCash(player: Player, value: number)
 	if value then
 		sessionData[player.UserId].TycoonConfig.BankCash = value
+	end
+end
+
+-- / Get e set upgradeIds
+function PlayerManager.GetUpgradeIds(player: Player)
+	return sessionData[player.UserId].UpgradeIds
+end
+
+function PlayerManager.AddUpgradeId(player: Player, id: string)
+	local data = sessionData[player.UserId]
+
+	print("A")
+	if not table.find(data.UpgradeIds, id) then
+		print("B")
+		table.insert(data.UpgradeIds, id)
 	end
 end
 

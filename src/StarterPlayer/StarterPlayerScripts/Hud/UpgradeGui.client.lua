@@ -113,10 +113,13 @@ function createSkill(row, upg)
     skill.SkillName.Text = string.format("%s(%d)", upg.Name, upg.Value.Quantity)
 
     skill.MouseButton1Down:Connect(function()
-        local success = Functions.TryBuyUpgrade:InvokeServer(upg.ID)
+        local success, resposta = Functions.TryBuyUpgrade:InvokeServer(upg.ID)
         if success then
             print(string.format("Comprou %s!", upg.Name))
+        else
+            warn(resposta)
         end
+        
     end)
 
     skill.Parent = row

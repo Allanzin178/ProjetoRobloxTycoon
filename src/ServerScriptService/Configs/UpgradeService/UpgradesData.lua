@@ -5,7 +5,7 @@ export type Upgrade = {
 	Name: string,
 	Description: string,
 	Value: {
-		Currency: EnumCurrencies,
+		Currency: EnumCurrencies.Type,
 		Quantity: number,
 	},
 	Requirements: {

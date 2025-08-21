@@ -18,6 +18,7 @@ function Upgrade.GetById(id: string): UpgradeData.Upgrade?
 	end
 	
 	warn("Upgrade com id", id, "não encontrado")
+	return nil
 end
 
 function Upgrade.GetAllByName(name: string): { UpgradeData.Upgrade? }

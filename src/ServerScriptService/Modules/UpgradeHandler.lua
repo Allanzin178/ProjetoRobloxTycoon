@@ -31,9 +31,31 @@ function UpgradeHandler.ListenInvoke()
 	Functions.GetAllUpgrades.OnServerInvoke = UpgradeHandler.GetAllUpgrades
 end
 
-function UpgradeHandler.UnlockUpgrade(player:Player, upgradeId: string): boolean
+function UpgradeHandler.UnlockUpgrade(player: Player, upgradeId: string): boolean & string
 	-- TODO: Verificação se o player ja tem o upgrade, e se ele tem o dinheiro necessario
-	print("Recebido!", upgradeId)
+	local resposta = "Operação deu errado"
+
+	-- Verificação se existe o upgrade com o id passado:
+	local upgrade = UpgradeService.GetById(upgradeId)
+	if not upgrade then
+		resposta = "Upgrade não existe"
+		return false, resposta
+	end
+
+	-- Pega os Ids do usuario e verifica se ja tem um com o mesmo nome la
+	local upgrades = PlayerManager.GetUpgradeIds(player)
+	if table.find(upgrades, upgradeId) then
+		resposta = "O player já tem o upgrade"
+		return false, resposta
+	end
+
+	-- Verifica se o usuario tem dinheiro para o upgrade
+	local currencyType = upgrade.Value.Currency
+	
+
+	PlayerManager.AddUpgradeId(player, upgradeId)
+	print("Upgrades:", upgrades)
+	return true
 end
 
 function UpgradeHandler.GetAllUpgrades(): boolean

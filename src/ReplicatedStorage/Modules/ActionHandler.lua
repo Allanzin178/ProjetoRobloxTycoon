@@ -32,7 +32,7 @@ function ActionHandler.M1(toolName: string, chr: Model, inputName: string, input
 		end
 		
 		local function whenPlayedFunc()
-			SoundHandler.Play("BatSwing1", {RandomPitch = {enabled = true}})
+			SoundHandler.Play("BatSwing1", {RandomPitch = {enabled = true, variation = "Medium"}})
 		end
 
 		local track = AnimationHandler.LoadAnim(chr, "BatAttack", animationId, markerReached, whenEndedFunc, whenPlayedFunc)

@@ -96,8 +96,8 @@ end
 function SoundHandler.RandomPitch(sound: Sound, variation: PitchVariations)
 	local variationsConfig: {[PitchVariations]: NumberRange} = {
 		["Low"] = NumberRange.new(1, 5),
-		["Medium"] = NumberRange.new(5, 10),
-		["High"] = NumberRange.new(10, 20)
+		["Medium"] = NumberRange.new(2, 10),
+		["High"] = NumberRange.new(5, 20)
 	}
 
 	local variationSelected: NumberRange = variationsConfig[variation] or variationsConfig["Low"]
@@ -111,7 +111,7 @@ function SoundHandler.RandomPitch(sound: Sound, variation: PitchVariations)
 	if addOrSubtract == 1 then
 		sound.PlaybackSpeed = 1 + pitchQuantity -- Se pitchQuantity fosse 20 por exemplo: 1 + 0,2 = 1,2
 	elseif addOrSubtract == 2 then
-		sound.PlaybackSpeed = 1 - pitchQuantity -- Se pitchQuantity fosse 20 por exemplo: 1 - 0,2 = 0,8
+		sound.PlaybackSpeed = 1 - (pitchQuantity / 2) -- Se pitchQuantity fosse 20 por exemplo: 1 - 0,2 = 0,8
 	end
 
 	return sound
