@@ -28,6 +28,9 @@ export type SoundConfigs = {
 }
 
 function SoundHandler:Init()
+	if RunService:IsClient() then
+		SoundHandler.SetupOnClient()
+	end
 	SoundHandler.GatherSounds(SoundService, Sounds)
 end
 

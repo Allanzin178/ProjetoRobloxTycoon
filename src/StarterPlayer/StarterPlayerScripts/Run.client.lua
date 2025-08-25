@@ -1,7 +1,7 @@
 local CAS = game:GetService("ContextActionService")
 local player = game.Players.LocalPlayer
 
-local chr
+local chr = player.Character
 local humanoid
 
 local NORMAL_SPEED = 26
@@ -32,14 +32,19 @@ local function onRunAction(actionName, inputState, inputObject)
 	end
 end
 
-player.CharacterAdded:Connect(function(character)
+local function configPlayer(character)
+	if not character then return end
 	chr = character
 	humanoid = character:WaitForChild("Humanoid")
 	
 	humanoid.WalkSpeed = NORMAL_SPEED
 	
 	CAS:BindAction("Run", onRunAction, true, Enum.KeyCode.LeftShift)
-end)
+end
+
+player.CharacterAdded:Connect(configPlayer)
+
+configPlayer(chr)
 
 
 

@@ -16,13 +16,13 @@ function ToolHandler.new(player: Player, tool: Tool)
 	self.Player = player
 	self.Tool = tool
 	
-	self:Init()
+	self:Setup()
 	
 	return self
 	
 end
 
-function ToolHandler:Init()
+function ToolHandler:Setup()
 	self.Tool.Equipped:Connect(function()
 		self:OnEquip()
 	end)

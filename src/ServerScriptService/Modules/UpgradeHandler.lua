@@ -5,6 +5,7 @@ local Functions = RS.Functions
 
 local PlayerManager = require(SCS.PlayerManager)
 local UpgradeService = require(SCS.Configs.UpgradeService)
+local SoundHandler = require(RS.Modules.SoundHandler)
 
 --[[
 	Logica:
@@ -72,6 +73,7 @@ function UpgradeHandler.UnlockUpgrade(player: Player, upgradeId: string): boolea
 		return false, resposta
 	end
 
+	SoundHandler.SendSoundToClient(player, "Money")
 	currencyFunctions.SetCurrency(player, playerCurrency - upgradeValue)
 	PlayerManager.AddUpgradeId(player, upgradeId)
 	return true
@@ -82,4 +84,12 @@ function UpgradeHandler.GetAllUpgrades(): boolean
 	return UpgradeService.GetAll()
 end
 
+function _loadUpgrade(upgradeId: string)
+	local upgrade = UpgradeService.GetById(upgradeId)
+	if not upgrade then
+		return nil
+	end
+
+	
+end
 return UpgradeHandler

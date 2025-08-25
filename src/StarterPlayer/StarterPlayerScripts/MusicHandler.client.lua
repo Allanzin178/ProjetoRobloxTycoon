@@ -6,7 +6,7 @@ local playerGui = player:WaitForChild("PlayerGui")
 local mute = playerGui:WaitForChild("Mute")
 
 local musics = {
-	"rbxassetid://125598466208798",
+	-- "rbxassetid://125598466208798",
 	"rbxassetid://118939739460633",
 	"rbxassetid://142376088",
 	"rbxassetid://121336636707861",
@@ -43,7 +43,7 @@ local function onClick()
 	end
 end
 
-local muteButton = mute.Frame.Mutar
-muteButton.Activated:Connect(onClick)
+local muteButton: GuiButton = mute.Frame.Mutar
+muteButton.MouseButton1Down:Connect(onClick)
 
 playRandomMusic()

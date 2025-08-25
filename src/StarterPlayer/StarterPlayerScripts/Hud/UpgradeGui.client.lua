@@ -21,7 +21,7 @@ local SkillTemplate = ReplicatedStorage.Gui.Skill
 
 -- / Variables gui menu
 local UpgradeKey = Enum.KeyCode.M
-local isOpen = false
+local isOpen = Wrapper.Visible
 local isInitialized = false
 
 -- / Skill tree Types
@@ -133,15 +133,17 @@ function toggleGui(actionName, inputState, inputObject)
     print(isOpen)
     
     if isOpen then -- fechar
+        Wrapper.Visible = false
         Wrapper.GroupTransparency = 1
         isOpen = false
     else  -- abrir
+        Wrapper.Visible = true
         Wrapper.GroupTransparency = 0
-
         InitializeSkillTree()
-
         isOpen = true
     end
 end
 
 CAS:BindAction("ToggleGui", toggleGui, false, UpgradeKey)
+
+

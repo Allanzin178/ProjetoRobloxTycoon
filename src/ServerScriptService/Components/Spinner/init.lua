@@ -1,5 +1,6 @@
 local Rewards = require(script.Rewards)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TimerService = require(ReplicatedStorage.Modules.TimerService)
 local SpinnerEvent = ReplicatedStorage.Events["Server-Client"].Spinner
 
 local Spinner = {}
@@ -17,6 +18,7 @@ function Spinner.new(tycoon, instance: Instance)
 	self.Tycoon = tycoon
 	self.Instance = instance
 	self.Cooldown = 10
+	self.CooldownGui = self.Instance.Seta.Cooldown
 	self.Roleta = self.Instance.Roleta
 	self.RoletaCentro = self.Instance.Roleta["Parte do centro"]
 
@@ -27,11 +29,29 @@ end
 function Spinner:Init()
 	self.SpinnerInfo = self:GetSpinnerInfo()
 	self:WeldSlicesWithCenter()
-	coroutine.wrap(function()
-		while self.Instance.Parent == self.Tycoon.Model do 
+
+	local timerData: TimerService.TimerData
+	timerData = {
+		Seconds = self.Cooldown,
+		UpdateTime = .1,
+		Order = "Decrescent",
+		OnUpdate = function(currentTime)
+			local gui = self.CooldownGui
+			if not gui or not gui:FindFirstChild("TextLabel") then return end
+
+			gui.TextLabel.Text = string.format("%.1f", currentTime)
+		end,
+		OnFinish = function(timerDuration)
+			print("Duração: " .. timerDuration)
+			task.wait(0.5)
 			self:Spin()
-			task.wait(self.Cooldown)
+			TimerService.new(timerData):Start()
 		end
+	}
+
+	coroutine.wrap(function()
+		self:Spin()
+		TimerService.new(timerData):Start()
 	end)()
 end
 
